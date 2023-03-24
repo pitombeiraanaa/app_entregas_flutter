@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mango/pages/mango.dart';
-import 'package:mango/pages/home.dart';
+
+import 'package:mango/pages/checkout.dart';
 
 MaterialColor white = const MaterialColor(
   0xFFFFFFFF,
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: white,
         scaffoldBackgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
-      home: const HomePage(),
+      home: const Checkout(),
     );
   }
 }
