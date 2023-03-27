@@ -3,8 +3,29 @@ import 'package:flutter/material.dart';
 import 'package:mango/pages/checkout.dart';
 import 'package:mango/pages/home.dart';
 
-class MangoPage extends StatelessWidget {
+class MangoPage extends StatefulWidget {
   const MangoPage({super.key});
+
+  @override
+  State<MangoPage> createState() => _MangoPageState();
+}
+
+class _MangoPageState extends State<MangoPage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      if (_counter > 0) {
+        _counter--;
+      }
+    });
+  }
+
+  void _incrementCounter2() {
+    setState(() {
+      _counter++;
+    });
+  }
 
 //  --------------------- App Bar ----------------------------------------------
   @override
@@ -57,7 +78,7 @@ class MangoPage extends StatelessWidget {
               child: Row(
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: _incrementCounter2,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                       shape: RoundedRectangleBorder(
@@ -80,7 +101,7 @@ class MangoPage extends StatelessWidget {
               child: Row(
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: _incrementCounter,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 255, 255, 255),
                       shape: RoundedRectangleBorder(
@@ -112,9 +133,9 @@ class MangoPage extends StatelessWidget {
                       ),
                       minimumSize: const Size(60, 60),
                     ),
-                    child: const Text(
-                      '2',
-                      style: TextStyle(
+                    child: Text(
+                      '$_counter',
+                      style: const TextStyle(
                         fontSize: 28,
                       ),
                     ),
@@ -145,15 +166,15 @@ class MangoPage extends StatelessWidget {
               left: 260,
               top: 340,
               child: Row(
-                children: const [
+                children: [
                   Text(
-                    '\$2,00',
-                    style: TextStyle(
+                    '\$' '$_counter' '.00',
+                    style: const TextStyle(
                         fontSize: 25,
                         color: Color.fromARGB(255, 203, 141, 253),
                         fontWeight: FontWeight.bold),
                   ),
-                  Text(
+                  const Text(
                     'PC',
                     style: TextStyle(
                         fontSize: 15,

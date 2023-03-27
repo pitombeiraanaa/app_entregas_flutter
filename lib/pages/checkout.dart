@@ -3,8 +3,29 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:mango/pages/mango.dart';
 
-class Checkout extends StatelessWidget {
+class Checkout extends StatefulWidget {
   const Checkout({super.key});
+
+  @override
+  State<Checkout> createState() => _CheckoutState();
+}
+
+class _CheckoutState extends State<Checkout> {
+  int _counterCheck = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      if (_counterCheck > 0) {
+        _counterCheck--;
+      }
+    });
+  }
+
+  void _incrementCounter2() {
+    setState(() {
+      _counterCheck++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +159,7 @@ class Checkout extends StatelessWidget {
             child: Row(
               children: const [
                 Text(
-                  '80 pc',
+                  '',
                   style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,
@@ -152,12 +173,13 @@ class Checkout extends StatelessWidget {
           Positioned(
             left: 250,
             top: 85,
-            child: Card(
-              color: const Color.fromARGB(245, 235, 228, 236),
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(100),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(245, 235, 228, 236),
+                shape: const CircleBorder(),
+                padding: const EdgeInsets.all(0),
               ),
+              onPressed: _incrementCounter,
               child: const SizedBox(
                 width: 30,
                 height: 30,
@@ -171,12 +193,13 @@ class Checkout extends StatelessWidget {
           Positioned(
             left: 288,
             top: 85,
-            child: Card(
-              color: const Color.fromARGB(255, 155, 105, 196),
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(100),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(255, 155, 105, 196),
+                shape: const CircleBorder(),
+                padding: const EdgeInsets.all(0),
               ),
+              onPressed: _incrementCounter2,
               child: const SizedBox(
                 width: 30,
                 height: 30,
@@ -198,7 +221,7 @@ class Checkout extends StatelessWidget {
             child: Row(
               children: const [
                 Text(
-                  '\$160.00',
+                  ' ',
                   style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,
@@ -305,12 +328,13 @@ class Checkout extends StatelessWidget {
           Positioned(
             left: 250,
             top: 220,
-            child: Card(
-              color: const Color.fromARGB(245, 235, 228, 236),
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(100),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(245, 235, 228, 236),
+                shape: const CircleBorder(),
+                padding: const EdgeInsets.all(0),
               ),
+              onPressed: _incrementCounter,
               child: const SizedBox(
                 width: 30,
                 height: 30,
@@ -324,12 +348,13 @@ class Checkout extends StatelessWidget {
           Positioned(
             left: 288,
             top: 220,
-            child: Card(
-              color: const Color.fromARGB(255, 155, 105, 196),
-              elevation: 0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(100),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(255, 155, 105, 196),
+                shape: const CircleBorder(),
+                padding: const EdgeInsets.all(0),
               ),
+              onPressed: _incrementCounter2,
               child: const SizedBox(
                 width: 30,
                 height: 30,
