@@ -12,11 +12,15 @@ class Checkout extends StatefulWidget {
 
 class _CheckoutState extends State<Checkout> {
   int _counterCheck = 0;
+  int _counterCheckPimentao = 0;
+  double _precoBanana = 0;
+  double _precoPimentao = 0;
 
   void _incrementCounter() {
     setState(() {
       if (_counterCheck > 0) {
         _counterCheck--;
+        _precoBanana -= 2;
       }
     });
   }
@@ -24,6 +28,23 @@ class _CheckoutState extends State<Checkout> {
   void _incrementCounter2() {
     setState(() {
       _counterCheck++;
+      _precoBanana += 2;
+    });
+  }
+
+  void _incrementCounterPimentao() {
+    setState(() {
+      if (_counterCheckPimentao > 0) {
+        _counterCheckPimentao--;
+        _precoPimentao -= 37.50;
+      }
+    });
+  }
+
+  void _incrementCounterPimentao2() {
+    setState(() {
+      _counterCheckPimentao++;
+      _precoPimentao += 37.50;
     });
   }
 
@@ -157,10 +178,10 @@ class _CheckoutState extends State<Checkout> {
             left: 150,
             top: 135,
             child: Row(
-              children: const [
+              children: [
                 Text(
-                  '',
-                  style: TextStyle(
+                  '$_counterCheck',
+                  style: const TextStyle(
                       fontSize: 16,
                       color: Colors.black,
                       fontWeight: FontWeight.bold),
@@ -219,10 +240,10 @@ class _CheckoutState extends State<Checkout> {
             left: 255,
             top: 135,
             child: Row(
-              children: const [
+              children: [
                 Text(
-                  ' ',
-                  style: TextStyle(
+                  '\$' '$_precoBanana',
+                  style: const TextStyle(
                       fontSize: 16,
                       color: Colors.black,
                       fontWeight: FontWeight.bold),
@@ -312,10 +333,10 @@ class _CheckoutState extends State<Checkout> {
             left: 150,
             top: 270,
             child: Row(
-              children: const [
+              children: [
                 Text(
-                  '4 KG',
-                  style: TextStyle(
+                  '$_counterCheckPimentao',
+                  style: const TextStyle(
                       fontSize: 16,
                       color: Colors.black,
                       fontWeight: FontWeight.bold),
@@ -334,7 +355,7 @@ class _CheckoutState extends State<Checkout> {
                 shape: const CircleBorder(),
                 padding: const EdgeInsets.all(0),
               ),
-              onPressed: _incrementCounter,
+              onPressed: _incrementCounterPimentao,
               child: const SizedBox(
                 width: 30,
                 height: 30,
@@ -354,7 +375,7 @@ class _CheckoutState extends State<Checkout> {
                 shape: const CircleBorder(),
                 padding: const EdgeInsets.all(0),
               ),
-              onPressed: _incrementCounter2,
+              onPressed: _incrementCounterPimentao2,
               child: const SizedBox(
                 width: 30,
                 height: 30,
@@ -374,10 +395,10 @@ class _CheckoutState extends State<Checkout> {
             left: 255,
             top: 275,
             child: Row(
-              children: const [
+              children: [
                 Text(
-                  '\$150.00',
-                  style: TextStyle(
+                  '\$' '$_counterCheckPimentao',
+                  style: const TextStyle(
                       fontSize: 16,
                       color: Colors.black,
                       fontWeight: FontWeight.bold),
@@ -554,7 +575,7 @@ class _CheckoutState extends State<Checkout> {
             right: 30,
             top: 553,
             child: Text(
-              '\$220.00',
+              '',
               style: TextStyle(
                   fontSize: 14,
                   color: Color.fromARGB(255, 0, 0, 0),
@@ -566,7 +587,7 @@ class _CheckoutState extends State<Checkout> {
             right: 30,
             top: 460,
             child: Text(
-              '\$220.00',
+              '',
               style: TextStyle(
                   fontSize: 14,
                   color: Color.fromARGB(255, 0, 0, 0),
@@ -600,7 +621,7 @@ class _CheckoutState extends State<Checkout> {
             left: 28,
             top: 530,
             child: Text(
-              '___________________________________________________________________',
+              '____________________________________________________________________________',
               style: TextStyle(
                   fontSize: 10,
                   color: Color.fromARGB(255, 212, 212, 212),
@@ -611,7 +632,7 @@ class _CheckoutState extends State<Checkout> {
             left: 28,
             top: 480,
             child: Text(
-              '___________________________________________________________________',
+              '___________________________________________________________________________',
               style: TextStyle(
                   fontSize: 10,
                   color: Color.fromARGB(255, 212, 212, 212),
