@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mango/pages/checkout.dart';
+import 'package:mango/pages/home.dart';
 
 class MangoPage extends StatelessWidget {
   const MangoPage({super.key});
+
 //  --------------------- App Bar ----------------------------------------------
   @override
   Widget build(BuildContext context) {
@@ -10,7 +13,13 @@ class MangoPage extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.chevron_left_sharp),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) {
+                return const HomePage();
+              },
+            ));
+          },
         ),
         title: const Text(
           'Mango',
@@ -373,7 +382,7 @@ class MangoPage extends StatelessWidget {
               ),
             ),
 
- // ------------------------------button footer 1 ------------------------------
+            // ------------------------------button footer 1 ------------------------------
             Positioned(
               left: 17,
               top: 620,
@@ -408,7 +417,13 @@ class MangoPage extends StatelessWidget {
               child: Row(
                 children: [
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return const Checkout();
+                        },
+                      ));
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color.fromARGB(255, 168, 107, 248),
                       shape: RoundedRectangleBorder(

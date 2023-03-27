@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mango/pages/mango.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -126,31 +127,34 @@ class HomePage extends StatelessWidget {
               ),
             ),
 
+            // ------- button ----------------
+
             Positioned(
-              right: 75,
+              left: 80,
               top: 630,
-              child: Card(
-                color: const Color.fromARGB(255, 155, 105, 196),
-                elevation: 0,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(25),
-                  side: const BorderSide(
-                    color: Color.fromARGB(255, 203, 141, 253),
-                    width: 1,
+              child: SizedBox(
+                width: 240,
+                height: 60,
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return const MangoPage();
+                      },
+                    ));
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 155, 105, 196),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(100),
+                    ),
+                    elevation: 0,
                   ),
-                ),
-                child: const SizedBox(
-                  width: 240,
-                  height: 60,
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(0, 18, 0, 0),
+                  child: const Padding(
+                    padding: EdgeInsets.fromLTRB(9, 3, 0, 0),
                     child: Text(
                       'Get Started',
-                      style: TextStyle(
-                          fontSize: 22,
-                          color: Color.fromARGB(255, 255, 255, 255),
-                          fontWeight: FontWeight.bold),
-                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 20),
                     ),
                   ),
                 ),

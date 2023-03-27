@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:mango/pages/mango.dart';
 
 class Checkout extends StatelessWidget {
   const Checkout({super.key});
@@ -11,7 +12,13 @@ class Checkout extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.chevron_left_sharp),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(
+              builder: (context) {
+                return const MangoPage();
+              },
+            ));
+          },
         ),
         title: const Text('Checkout'),
         centerTitle: true,
@@ -353,6 +360,8 @@ class Checkout extends StatelessWidget {
               ],
             ),
           ),
+
+          // promo code
           Positioned(
             left: -3,
             top: 340,
@@ -382,7 +391,7 @@ class Checkout extends StatelessWidget {
                 ),
               ),
               child: const SizedBox(
-                width: 320,
+                width: 360,
                 height: 60,
               ),
             ),
@@ -405,7 +414,7 @@ class Checkout extends StatelessWidget {
           ),
 
           Positioned(
-            left: 400,
+            left: 40,
             top: 380,
             child: Card(
               color: const Color.fromARGB(255, 246, 246, 246),
@@ -489,7 +498,7 @@ class Checkout extends StatelessWidget {
                 borderRadius: BorderRadius.circular(15),
               ),
               child: const SizedBox(
-                width: 320,
+                width: 360,
                 height: 140,
               ),
             ),
